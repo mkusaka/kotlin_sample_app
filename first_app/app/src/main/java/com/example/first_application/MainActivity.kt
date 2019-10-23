@@ -1,10 +1,13 @@
 package com.example.first_application
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,6 +22,9 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        Toast.makeText(this, "App Created event fire!", Toast.LENGTH_SHORT).show()
+        Log.i("info", "Done create the app")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -35,5 +41,15 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun topClick(v: View) {
+        Toast.makeText(this, "Top Button clicked", Toast.LENGTH_SHORT).show()
+        Log.i("info", "the user clicked the top button")
+    }
+
+    fun bottomClick(v: View) {
+        Toast.makeText(this, "bottom Button clicked", Toast.LENGTH_SHORT).show()
+        Log.i("info", "the user clicked the bottom button")
     }
 }
